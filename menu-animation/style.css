@@ -1,4 +1,4 @@
-head,
+html,
 body {
   min-height: 100vh;
 }
@@ -13,8 +13,4 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-menu {
-  padding: 0;
 }

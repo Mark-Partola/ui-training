@@ -1,31 +1,33 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require("path");
 
-const namespace = 'menu-animation';
+const namespace = "menu-animation";
 const context = path.resolve(__dirname, namespace);
 
 module.exports = {
-  mode: 'none',
+  mode: "none",
   watch: true,
   context,
-  entry: './app.js',
+  entry: "./app.js",
   output: {
-    filename: 'bundle.js',
-    path: context + '/dist',
+    filename: "bundle.js",
+    path: context + "/dist"
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'index.html'
-    })
+      template: "index.html"
+    }),
+    new MiniCssExtractPlugin()
   ],
   module: {
     rules: [
       {
         test: /\.css$/,
         use: [
-          'style-loader',
-          { loader: 'css-loader', options: { importLoaders: 1 } },
-          'postcss-loader'
+          MiniCssExtractPlugin.loader,
+          { loader: "css-loader", options: { importLoaders: 1 } },
+          "postcss-loader"
         ]
       }
     ]
