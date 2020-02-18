@@ -1,0 +1,7 @@
+{
+  "main.css": "main.css",
+  "main.js": "bundle.js",
+  "index.html": "index.html",
+  "display": "standalone",
+  "background_color": "#26255e"
+}

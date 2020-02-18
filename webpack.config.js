@@ -1,24 +1,23 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
 
-const namespace = "menu-animation";
+const namespace = process.env.PROJECT_ROOT;
 const context = path.resolve(__dirname, namespace);
 
 module.exports = {
   mode: "none",
-  watch: true,
   context,
-  entry: "./app.js",
+  entry: "./src/app.js",
   output: {
     filename: "bundle.js",
     path: context + "/dist"
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: "index.html"
-    }),
-    new MiniCssExtractPlugin()
+    new HtmlWebpackPlugin({ template: "index.html" }),
+    new MiniCssExtractPlugin(),
+    new CopyWebpackPlugin(["manifest.json", "sw.js"])
   ],
   module: {
     rules: [

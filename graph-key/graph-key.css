@@ -1,0 +1,55 @@
+.graph-key {
+  --main-color: #26255e;
+  --error-color: #7e2625;
+
+  width: 320px;
+  height: 320px;
+  -webkit-overflow-scrolling: auto;
+}
+
+.graph-key-invalid {
+  pointer-events: none;
+}
+
+.vertex {
+  cursor: pointer;
+  fill: var(--main-color);
+  opacity: 0.5;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &.invalid {
+    fill: var(--error-color);
+    animation: shake 0.01s 50;
+  }
+}
+
+.inner-vertex {
+  fill: var(--main-color);
+  pointer-events: none;
+}
+
+.edge {
+  stroke: var(--main-color);
+  fill: none;
+
+  .graph-key-invalid & {
+    stroke: var(--error-color);
+    animation: shake 0.01s 50;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px);
+  }
+
+  100% {
+    transform: translate(-1px, -1px);
+  }
+}
