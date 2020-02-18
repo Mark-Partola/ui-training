@@ -1,0 +1,16 @@
+html,
+body {
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #2f3fa4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
