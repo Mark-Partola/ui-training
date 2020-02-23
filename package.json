@@ -2,7 +2,6 @@
   "name": "challenges",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "start": "PROJECT_ROOT=graph-key webpack-dev-server",
     "build": "PROJECT_ROOT=graph-key webpack"
@@ -11,16 +10,17 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "css-loader": "^3.4.2",
+    "webpack": "4.41.6",
+    "webpack-cli": "3.3.11",
+    "webpack-dev-server": "3.10.3",
     "html-webpack-plugin": "3.2.0",
     "mini-css-extract-plugin": "0.9.0",
     "copy-webpack-plugin": "5.1.1",
-    "postcss-loader": "^3.0.0",
+    "css-loader": "3.4.2",
+    "ts-loader": "6.2.1",
+    "postcss-loader": "3.0.0",
     "postcss-nested": "4.2.1",
     "postcss-preset-env": "6.7.0",
-    "style-loader": "1.1.3",
-    "webpack": "4.41.6",
-    "webpack-cli": "3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "typescript": "3.7.5"
   }
 }
