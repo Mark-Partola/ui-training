@@ -1,4 +1,6 @@
 # ui-training
 
 ## DEMO
- * menu-animation: imminent-doctor.surge.sh
+
+- menu-animation: menu-animation.surge.sh
+- graph-pass: graphpass.surge.sh

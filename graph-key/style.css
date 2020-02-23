@@ -1,0 +1,33 @@
+html,
+body {
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    to right top,
+    rgb(92, 37, 141),
+    rgb(67, 137, 162)
+  );
+  background-size: 200% 200%;
+  animation: splashBackground 10s ease-in-out infinite;
+}
+
+@keyframes splashBackground {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
