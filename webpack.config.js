@@ -9,6 +9,7 @@ const context = path.resolve(__dirname, namespace);
 module.exports = {
   mode: "none",
   context,
+  devtool: "inline-source-map",
   entry: "./src/app.js",
   output: {
     filename: "bundle.js",
@@ -17,7 +18,11 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({ template: "index.html" }),
     new MiniCssExtractPlugin(),
-    new CopyWebpackPlugin(["manifest.json", "sw.js"])
+    new CopyWebpackPlugin([
+      "manifest.json",
+      "sw.js",
+      { from: 'assets', to: 'assets' },
+    ])
   ],
   module: {
     rules: [
@@ -28,6 +33,11 @@ module.exports = {
           { loader: "css-loader", options: { importLoaders: 1 } },
           "postcss-loader"
         ]
+      },
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/
       }
     ]
   }
